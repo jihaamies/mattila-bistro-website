@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mattila Bistro and Pizza - Taste the Tradition, Feel the Flavor!</title>
+    <title>Mattila Bistro ja Pizza - Maista Perinne, Tunne Maku!</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Special Elite -->
@@ -16,7 +16,7 @@
         /* Ensure sections take full height when active for smooth scrolling/viewing */
         .page-section {
             display: none; /* Hidden by default */
-            min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+            min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -26,10 +26,14 @@
         }
         /* Specific styling for the home page background overlay */
         #home-page .background-overlay {
-            background-image: url('hero_pizza_oven.webp');
+            background-image: url('https://placehold.co/1920x1080/000000/ffffff?text=Pizza+Oven');
             background-size: cover;
             background-position: center center;
             opacity: 0.3;
+        }
+        /* Handle placeholder error */
+        img[onerror] {
+            display: none;
         }
     </style>
 </head>
@@ -37,20 +41,27 @@
 
     <!-- Navigation Bar -->
     <nav class="bg-black p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex flex-wrap justify-between items-center">
-            <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-bold rounded-lg p-2 flex-shrink-0">
-                <span>Mattila Bistro and Pizza</span>
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+            <!-- Logo/Title -->
+            <h1 class="text-white text-2xl md:text-3xl font-bold text-center lg:text-left mb-4 lg:mb-0">
+                Mattila Bistro ja Pizza
             </h1>
-            <div class="flex flex-wrap justify-center sm:justify-start space-x-2 sm:space-x-4 mt-2 sm:mt-0">
-                <button onclick="showPage('home')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="home">Home</button>
-                <button onclick="showPage('menu')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="menu">Menu</button>
-                <button onclick="showPage('contact')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="contact">Contact</button>
-            </div>
-            <!-- Language Selection -->
-            <div class="flex space-x-2 ml-4 mt-2 sm:mt-0 flex-shrink-0">
-                <a href="index.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white bg-gray-800 hover:bg-gray-700">EN</a>
-                <a href="index_fi.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white hover:bg-gray-700">FI</a>
-                <a href="index_sv.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white hover:bg-gray-700">SV</a>
+
+            <!-- Navigation and Language Wrapper -->
+            <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <!-- Page Navigation -->
+                <div class="flex justify-center items-center space-x-2">
+                    <button onclick="showPage('home')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="home">Etusivu</button>
+                    <button onclick="showPage('menu')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="menu">Menu</button>
+                    <button onclick="showPage('contact')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="contact">Yhteystiedot</button>
+                </div>
+
+                <!-- Language Selection -->
+                <div class="flex space-x-2">
+                    <a href="index_en.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white hover:bg-gray-700">EN</a>
+                    <a href="index.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white bg-gray-800 hover:bg-gray-700">FI</a>
+                    <a href="index_sv.html" class="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 text-white hover:bg-gray-700">SV</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -62,28 +73,28 @@
             <div class="absolute inset-0 background-overlay"></div>
             <div class="container mx-auto text-center relative z-10 px-4">
                 <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                    Taste the Tradition, Feel the Flavor!
+                    Maista Perinne, Tunne Maku!
                 </h2>
                 <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow-md">
-                    Authentic pizzas, fresh ingredients, and a passion for perfection. Your ultimate pizza experience starts here.
+                    Aidot pizzat, tuoreet raaka-aineet ja intohimo täydellisyyteen. Täydellinen pizzakokemuksesi alkaa tästä.
                 </p>
                 <button class="bg-yellow-400 text-black px-8 py-4 rounded-full text-xl font-bold shadow-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
-                    Order Now!
+                    Tilaa Nyt!
                 </button>
                 <div class="mt-8 text-lg md:text-xl drop-shadow-md">
                     <p><a href="tel:+358503599109" class="text-white hover:underline">+358 50 359 9109</a></p>
-                    <p>Monday - Saturday: 11:00 AM - 8:00 PM</p>
+                    <p>Maanantai - Lauantai: 11:00 - 20:00</p>
                 </div>
             </div>
         </section>
 
         <!-- Menu Page Section -->
         <section id="menu-page" class="page-section bg-black text-white py-12 px-4">
-            <div class="container mx-auto max-w-2xl">
-                <h2 class="text-4xl font-bold text-center text-white mb-10">Our Delicious Menu</h2>
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">Herkullinen Menu</h2>
 
                 <div class="bg-[#2b2b2b] rounded-xl shadow-lg p-8">
-                    <h3 class="text-3xl font-bold text-white mb-6">Red Pizzas</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Punaiset Pizzat (Punainen)</h3>
                     <div class="space-y-6">
                         <!-- Pizza Item: Punainen: Viisasten valinta -->
                         <div>
@@ -91,7 +102,7 @@
                                 <h4 class="text-xl font-semibold text-white">Viisasten valinta</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€18.60</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Tomato sauce, fior di latte mozzarella, parmesan, paprika, eggplant, olive, marinated red onion, parsley-pesto, olive oil.</p>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella, parmesaani, paprika, munakoiso, oliivi, marinoitu punasipuli, persilja-pesto, oliiviöljy.</p>
                         </div>
                         <!-- Pizza Item: Punainen: 7 Veljen saalis -->
                         <div>
@@ -99,7 +110,7 @@
                                 <h4 class="text-xl font-semibold text-white">7 Veljen saalis</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€19.90</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Tomato sauce, fior di latte mozzarella, parmesan, guanciale, ricotta cream, marinated red onion, burnt asparagus, caramelized pistachio, olive oil.</p>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella, parmesaani, guanciale, ricotta-kreemi, marinoitu punasipuli, poltettu parsa, karamelisoitu pistaasi, oliiviöljy.</p>
                         </div>
                         <!-- Pizza Item: Punainen: Super sayan -->
                         <div>
@@ -107,13 +118,13 @@
                                 <h4 class="text-xl font-semibold text-white">Super sayan</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€16.20</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Tomato sauce, garlic, chili, fried capers, parsley-pesto, olive oil (parmesan-pecorino + 2€).</p>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, valkosipuli, chili, friteerattu kapris, persilja-pesto, oliiviöljy (parmesan-pecorino + 2€).</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-[#2b2b2b] rounded-xl shadow-lg p-8 mt-8">
-                    <h3 class="text-3xl font-bold text-white mb-6">White Pizzas</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Valkoiset Pizzat (Valkoinen)</h3>
                     <div class="space-y-6">
                         <!-- Pizza Item: Valkoinen: Pera Blu -->
                         <div>
@@ -121,7 +132,7 @@
                                 <h4 class="text-xl font-semibold text-white">Pera Blu</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€18.90</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, blue cheese, parmesan, pear, walnut-vinaigrette, olive oil.</p>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, sinihomejuusto, parmesaani, päärynä, saksanpähkinä-vinaigrette, oliiviöljy.</p>
                         </div>
                         <!-- Pizza Item: Valkoinen: Savu & Sitruuna -->
                         <div>
@@ -129,7 +140,7 @@
                                 <h4 class="text-xl font-semibold text-white">Savu & Sitruuna</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€19.90</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, cold-smoked salmon, parmesan, marinated red onion, fried capers, grated lemon peel, olive oil.</p>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, kylmäsavulohi, parmesaani, marinoitu punasipuli, friteerattu kapris, raastettu sitruunan kuori, oliiviöljy.</p>
                         </div>
                         <!-- Pizza Item: Valkoinen: Alexander -->
                         <div>
@@ -137,13 +148,13 @@
                                 <h4 class="text-xl font-semibold text-white">Alexander</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€16.90</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, parmesan, chili, garlic, parsley-pesto, olive oil.</p>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, parmesaani, chili, valkosipuli, persilja-pesto, oliiviöljy.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-[#2b2b2b] rounded-xl shadow-lg p-8 mt-8">
-                    <h3 class="text-3xl font-bold text-white mb-6">Chef's Choice (Kokin valinta)</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Kokin Valinta</h3>
                     <div class="space-y-6">
                         <!-- Pizza Item: Kokin valinta -->
                         <div>
@@ -151,13 +162,13 @@
                                 <h4 class="text-xl font-semibold text-white">Kokin valinta</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€16.90</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Please ask your server for today's special!</p>
+                            <p class="text-gray-300 text-sm">Kysy tarjoilijalta päivän erikoinen!</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-[#2b2b2b] rounded-xl shadow-lg p-8 mt-8">
-                    <h3 class="text-3xl font-bold text-white mb-6">Kids Pizza (Lasten pizza)</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Lasten Pizza</h3>
                     <div class="space-y-6">
                         <!-- Pizza Item: Lasten pizza -->
                         <div>
@@ -165,7 +176,7 @@
                                 <h4 class="text-xl font-semibold text-white">Lasten pizza</h4>
                                 <span class="text-yellow-400 text-xl font-bold">€10.00</span>
                             </div>
-                            <p class="text-gray-300 text-sm">Tomato sauce, fior di latte mozzarella and two toppings of your choice (burrata +5€).</p>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella ja kaksi valitsemaasi täytettä (burrata +5€).</p>
                         </div>
                     </div>
                 </div>
@@ -175,27 +186,26 @@
 
         <!-- Contact Page Section -->
         <section id="contact-page" class="page-section bg-black text-white py-12 px-4">
-            <div class="container mx-auto max-w-2xl">
-                <h2 class="text-4xl font-bold text-center text-white mb-10">Find Us & Get In Touch</h2>
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">Löydä meidät ja Ota yhteyttä</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     <!-- Contact Info -->
                     <div class="bg-[#2b2b2b] p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-semibold text-white mb-6">Contact Information</h3>
+                        <h3 class="text-3xl font-semibold text-white mb-6">Yhteystiedot</h3>
                         <div class="space-y-4 text-lg text-gray-300">
-                            <p><strong>Address:</strong> Uudenkyläntie 90<br>05200 Rajamäki (Nurmijärvi)<br>FINLAND</p>
-                            <p><strong>Phone:</strong> <a href="tel:+358503599109" class="text-yellow-400 hover:underline">+358 50 359 9109</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:info@pizzapalace.com" class="text-yellow-400 hover:underline">info@pizzapalace.com</a></p>
-                            <p><strong>Opening Hours:</strong></p>
+                            <p><strong>Osoite:</strong> Uudenkyläntie 90<br>05200 Rajamäki (Nurmijärvi)<br>SUOMI</p>
+                            <p><strong>Puhelin:</strong> <a href="tel:+358503599109" class="text-yellow-400 hover:underline">+358 50 359 9109</a></p>
+                            <p><strong>Sähköposti:</strong> <a href="mailto:info@pizzapalace.com" class="text-yellow-400 hover:underline">info@pizzapalace.com</a></p>
+                            <p><strong>Aukioloajat:</strong></p>
                             <ul class="list-disc list-inside ml-4">
-                                <li>Monday - Saturday: 11:00 AM - 8:00 PM</li>
-                                <li>Sunday: 12:00 PM - 9:00 PM</li>
+                                <li>Maanantai - Lauantai: 11:00 - 20:00</li>
+                                <li>Sunnuntai: 12:00 - 21:00</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Map Embed (Replace with your actual embed code) -->
+                    <!-- Map Embed -->
                     <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden h-96 w-full flex items-center justify-center">
-                        <!-- Example Google Maps Embed - Replace the iframe content with your actual embed code from Google Maps or OpenStreetMap -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.8468779956403!2d24.810696956799047!3d60.5050854497047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681d6d8a39d8995%3A0x6a2c3d0f0a4f5f5!2sUudenkyl%C3%A4ntie%2090%2C%2005200%20Rajam%C3%A4ki!5e0!3m2!1sen!2sfi!4v1701700000000!5m2!1sen!2sfi"
                             width="100%"
@@ -205,40 +215,27 @@
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                         ></iframe>
-                        <!-- Or for OpenStreetMap:
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            scrolling="no"
-                            marginheight="0"
-                            marginwidth="0"
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=24.8093%2C60.5045%2C24.8121%2C60.5055&layer=mapnik&marker=60.5050%2C24.8107"
-                            style="border: 1px solid black"
-                        ></iframe>
-                        <small><a href="https://www.openstreetmap.org/?mlat=60.5050&mlon=24.8107#map=19/60.5050/24.8107">View Larger Map</a></small>
-                        -->
                     </div>
                 </div>
 
-                <!-- Contact Form Placeholder (Optional, can be added later) -->
+                <!-- Contact Form -->
                 <div class="bg-[#2b2b2b] p-8 rounded-xl shadow-lg mt-12">
-                    <h3 class="text-3xl font-semibold text-white mb-6 text-center">Send Us a Message</h3>
+                    <h3 class="text-3xl font-semibold text-white mb-6 text-center">Lähetä meille viesti</h3>
                     <form class="space-y-4 max-w-lg mx-auto">
                         <div>
-                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name:</label>
-                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Your Name">
+                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Nimi:</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Nimesi">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
-                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="your@email.com">
+                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Sähköposti:</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="sähköpostisi@esimerkki.com">
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message:</label>
-                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Your message..."></textarea>
+                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Viesti:</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Viestisi..."></textarea>
                         </div>
                         <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded-full text-lg font-bold shadow-md hover:bg-yellow-300 transition-colors w-full">
-                            Send Message
+                            Lähetä Viesti
                         </button>
                     </form>
                 </div>
@@ -247,10 +244,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white p-6 text-center rounded-t-lg mt-8">
+    <footer class="bg-gray-900 text-white p-6 text-center rounded-t-lg mt-auto">
         <div class="container mx-auto">
-            <p class="text-sm">© <span id="current-year"></span> Mattila Bistro and Pizza. All rights reserved.</p>
-            <p class="text-xs mt-2">Crafted with passion, served with joy.</p>
+            <p class="text-sm">© <span id="current-year"></span> Mattila Bistro ja Pizza. Kaikki oikeudet pidätetään.</p>
+            <p class="text-xs mt-2">Valmistettu intohimolla, tarjoiltu ilolla.</p>
         </div>
     </footer>
 
