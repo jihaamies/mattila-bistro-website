@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattila Bistro and Pizza - Taste the Tradition, Feel the Flavor!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Special Elite font */
+        body {
+            font-family: 'Special Elite', monospace;
+        }
+        /* Ensure sections take full height when active for smooth scrolling/viewing */
+        .page-section {
+            display: none; /* Hidden by default */
+            min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-section.active {
+            display: flex; /* Show when active */
+        }
+        /* Specific styling for the home page background overlay */
+        #home-page .background-overlay {
+            background-image: url('hero_pizza_oven.webp');
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black antialiased flex flex-col">
+
+    <nav class="bg-black p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-3xl font-bold rounded-lg p-2">
+                <span class="hidden sm:inline">Mattila Bistro and Pizza</span>
+            </h1>
+            <div class="flex space-x-4">
+                <button onclick="showPage('home')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="home">Home</button>
+                <button onclick="showPage('menu')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="menu">Menu</button>
+                <button onclick="showPage('contact')" class="nav-item px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 text-white hover:bg-gray-900 hover:shadow-sm" data-page="contact">Contact</button>
+            </div>
+            
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section id="home-page" class="page-section active relative bg-gradient-to-br from-black to-gray-900 text-white py-20 md:py-32">
+            <div class="absolute inset-0 background-overlay"></div>
+            <div class="container mx-auto text-center relative z-10 px-4">
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                    Taste the Tradition, Feel the Flavor!
+                </h2>
+                <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow-md">
+                    Authentic pizzas, fresh ingredients, and a passion for perfection. Your ultimate pizza experience starts here.
+                </p>
+                <button class="bg-yellow-400 text-black px-8 py-4 rounded-full text-xl font-bold shadow-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+                    Order Now!
+                </button>
+                <div class="mt-8 text-lg md:text-xl drop-shadow-md">
+                    <p><a href="tel:+358503599109" class="text-white hover:underline">+358 50 359 9109</a></p>
+                    <p>Monday - Saturday: 11:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-page" class="page-section bg-black text-white py-12 px-4">
+            <div class="container mx-auto max-w-2xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">Our Delicious Menu</h2>
+
+                <div class="bg-gray-950 rounded-xl shadow-lg p-8">
+                    <h3 class="text-3xl font-bold text-white mb-6">Red Pizzas (Punainen)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Viisasten valinta</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€18.60</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella, parmesaani, paprika, munakoiso, oliivi, marinoitu punasipuli, persilja-pesto, oliiviöljy.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">7 Veljen saalis</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€19.90</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella, parmesaani, guanciale, ricotta-kreemi, marinoitu punasipuli, poltettu parsa, karamelisoitu pistaasi, oliiviöljy.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Super sayan</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€16.20</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, valkosipuli, chilli, friteerattu kapris, persilja-pesto, oliiviöljy (parmesan-pecorino + 2€).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-950 rounded-xl shadow-lg p-8 mt-8">
+                    <h3 class="text-3xl font-bold text-white mb-6">White Pizzas (Valkoinen)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Pera Blu</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€18.90</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, sinihomejuusto, parmesaani, päärynä, saksanpähkinä-vinaigrette, oliiviöljy.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Savu & Sitruuna</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€19.90</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, kylmäsavulohi, parmesaani, marinoitu punasipuli, friteerattu kapris, raastettu sitruunan kuori, oliiviöljy.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Alexander</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€16.90</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Crème fraîche, fior di latte mozzarella, parmesaani, chilli, valkosipuli, persilja-pesto, oliiviöljy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-950 rounded-xl shadow-lg p-8 mt-8">
+                    <h3 class="text-3xl font-bold text-white mb-6">Chef's Choice (Kokin valinta)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Kokin valinta</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€16.90</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Please ask your server for today's special!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-950 rounded-xl shadow-lg p-8 mt-8">
+                    <h3 class="text-3xl font-bold text-white mb-6">Kids Pizza (Lasten pizza)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="text-xl font-semibold text-white">Lasten pizza</h4>
+                                <span class="text-yellow-400 text-xl font-bold">€10.00</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">Tomaattikastike, fior di latte mozzarella ja kaksi valitsemaasi täytettä (burrata +5€).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact-page" class="page-section bg-black text-white py-12 px-4">
+            <div class="container mx-auto max-w-2xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">Find Us & Get In Touch</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-gray-950 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-semibold text-white mb-6">Contact Information</h3>
+                        <div class="space-y-4 text-lg text-gray-300">
+                            <p><strong>Address:</strong> Uudenkyläntie 90<br>05200 Rajamäki (Nurmijärvi)<br>FINLAND</p>
+                            <p><strong>Phone:</strong> <a href="tel:+358503599109" class="text-yellow-400 hover:underline">+358 50 359 9109</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@pizzapalace.com" class="text-yellow-400 hover:underline">info@pizzapalace.com</a></p>
+                            <p><strong>Opening Hours:</strong></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Monday - Saturday: 11:00 AM - 8:00 PM</li>
+                                <li>Sunday: 12:00 PM - 9:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden h-96 w-full flex items-center justify-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.8468779956403!2d24.810696956799047!3d60.5050854497047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681d6d8a39d8995%3A0x6a2c3d0f0a4f5f5!2sUudenkyl%C3%A4ntie%2090%2C%2005200%20Rajam%C3%A4ki!5e0!3m2!1sen!2sfi!4v1701700000000!5m2!1sen!2sfi"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                        </div>
+                </div>
+
+                <div class="bg-gray-950 p-8 rounded-xl shadow-lg mt-12">
+                    <h3 class="text-3xl font-semibold text-white mb-6 text-center">Send Us a Message</h3>
+                    <form class="space-y-4 max-w-lg mx-auto">
+                        <div>
+                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name:</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-400" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded-full text-lg font-bold shadow-md hover:bg-yellow-300 transition-colors w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 text-white p-6 text-center rounded-t-lg mt-8">
+        <div class="container mx-auto">
+            <p class="text-sm">© <span id="current-year"></span> Mattila Bistro and Pizza. All rights reserved.</p>
+            <p class="text-xs mt-2">Crafted with passion, served with joy.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle page switching and active navigation item styling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Function to show/hide sections and update nav active state
+            window.showPage = function(pageId) {
+                // Hide all page sections
+                document.querySelectorAll('.page-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the requested page section
+                const activePage = document.getElementById(pageId + '-page');
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+
+                // Update navigation item active state
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    if (item.dataset.page === pageId) {
+                        item.classList.add('bg-white', 'text-black', 'shadow-md');
+                        item.classList.remove('text-white', 'hover:bg-gray-900', 'hover:shadow-sm');
+                    } else {
+                        item.classList.remove('bg-white', 'text-black', 'shadow-md');
+                        item.classList.add('text-white', 'hover:bg-gray-900', 'hover:shadow-sm');
+                    }
+                });
+            };
+
+            // Initialize with the home page active
+            showPage('home');
+        });
+    </script>
+
+</body>
+</html>
