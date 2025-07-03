@@ -68,7 +68,7 @@
         <section id="home-page" class="page-section active relative bg-gradient-to-br from-black to-gray-900 text-white py-20 md:py-32">
             <div class="absolute inset-0 background-overlay"></div>
             <div class="container mx-auto text-center relative z-10 px-4">
-                <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                     Maista Perinne, Tunne Maku!
                 </h2>
                 <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow-md">
@@ -187,7 +187,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     <!-- Contact Info -->
                     <div class="bg-[#2b2b2b] p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-semibold text-white mb-6">Yhteystiedot</h3>
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-6">Yhteystiedot</h3>
                         <div class="space-y-4 text-lg text-gray-300">
                             <p><strong>Osoite:</strong> Uudenkyläntie 90<br>05200 Rajamäki (Nurmijärvi)<br>SUOMI</p>
                             <p><strong>Puhelin:</strong> <a href="tel:+358503599109" class="text-yellow-400 hover:underline">+358 50 359 9109</a></p>
@@ -240,9 +240,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white p-6 text-center rounded-t-lg mt-auto">
+    <footer class="bg-[#2b2b2b] text-white p-6 text-center mt-auto">
         <div class="container mx-auto">
-            <p class="text-sm">© <span id="current-year"></span> Mattila Bistro ja Pizza. Kaikki oikeudet pidätetään.</p>
+            <p class="text-sm">© <span id="current-year">2025</span> Mattila Bistro ja Pizza. Kaikki oikeudet pidätetään.</p>
             <p class="text-xs mt-2">Valmistettu intohimolla, tarjoiltu ilolla.</p>
         </div>
     </footer>
@@ -251,7 +251,7 @@
         // JavaScript to handle page switching and active navigation item styling
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            // document.getElementById('current-year').textContent = new Date().getFullYear();
 
             // Function to show/hide sections and update nav active state
             window.showPage = function(pageId) {
